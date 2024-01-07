@@ -11,7 +11,5 @@ return {
         end
         dap.listeners.before.event_terminated["dapui_config"] = function() end
         dap.listeners.before.event_exited["dapui_config"] = function() end
-
-        vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "red", linehl = "", numhl = "" })
     end,
 }
