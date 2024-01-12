@@ -8,4 +8,4 @@ vim.keymap.set("n", "<leader>.", function()
         winblend = 10,
         previewer = false,
     }))
-end, { desc = "[/] Fuzzily search in current buffer" })
+end, { desc = "Fuzzily search in current buffer" })
