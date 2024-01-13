@@ -18,6 +18,11 @@ return {
                 ":Telescope find_files<CR>",
                 desc = "Find Files",
             },
+            { -- override this keymap to fix a bug
+                "<leader><space>",
+                ":Telescope find_files<CR>",
+                desc = "Find Files",
+            },
             {
                 "<leader>.",
                 function()
