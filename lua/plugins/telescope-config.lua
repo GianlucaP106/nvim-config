@@ -1,3 +1,20 @@
+local find_files = function()
+    require("telescope.builtin").find_files({
+        hidden = true,
+        file_ignore_patterns = {
+            ".git",
+        },
+    })
+end
+
+local find_file_config = function(key)
+    return {
+        key,
+        find_files,
+        desc = "Find Files",
+    }
+end
+
 return {
     -- change some telescope options and a keymap to browse plugin files
     {
@@ -13,16 +30,8 @@ return {
                 end,
                 desc = "Find Plugin File",
             },
-            { -- override this keymap to fix a bug
-                "<leader>ff",
-                ":Telescope find_files<CR>",
-                desc = "Find Files",
-            },
-            { -- override this keymap to fix a bug
-                "<leader><space>",
-                ":Telescope find_files<CR>",
-                desc = "Find Files",
-            },
+            find_file_config("<leader>ff"),
+            find_file_config("<leader><space>"),
             {
                 "<leader>.",
                 function()
