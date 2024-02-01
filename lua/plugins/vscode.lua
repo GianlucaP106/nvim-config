@@ -19,7 +19,7 @@ return {
 
                 -- Override colors (see ./lua/vscode/colors.lua)
                 color_overrides = {
-                    vscBack = "#000000",
+                    -- vscBack = "#000000",
                     -- vscLineNumber = '#92bbcf',
                 },
 
@@ -28,20 +28,9 @@ return {
                     -- this supports the same val table as vim.api.nvim_set_hl
                     -- use colors from this colorscheme by requiring vscode.colors!
                     -- Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = false },
-
-                    -- typescriptInterfaceName = { fg = c.vscBlue, bg = 'NONE' },
                 },
             })
             require("vscode").load()
-
-            -- with tree sitter
-            vim.api.nvim_set_hl(0, "@keyword", { fg = c.vscBlue, bg = "NONE" })
-            vim.api.nvim_set_hl(0, "@type.builtin", { fg = c.vscBlueGreen, bg = "NONE" })
-            vim.api.nvim_set_hl(0, "@attribute", { fg = c.vscBlueGreen, bg = "NONE" })
-
-            vim.api.nvim_set_hl(0, "PreProc", { fg = c.vscBlueGreen, bg = "NONE" })
-            vim.api.nvim_set_hl(0, "typescriptDefault", { fg = c.vscPink, bg = "NONE" })
-            vim.api.nvim_set_hl(0, "Type", { fg = c.vscBlueGreen, bg = "NONE" })
         end,
     },
 
