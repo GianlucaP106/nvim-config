@@ -17,33 +17,30 @@ end
 
 return {
     -- change some telescope options and a keymap to browse plugin files
-    -- {
-    --     "nvim-telescope/telescope.nvim",
-    --     keys = {
-    --         -- add a keymap to browse plugin files
-    --         -- stylua: ignorecase
-    --
-    --         {
-    --             "<leader>fp",
-    --             function()
-    --                 require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
-    --             end,
-    --             desc = "Find Plugin File",
-    --         },
-    --         find_file_config("<leader>ff"),
-    --         find_file_config("<leader><space>"),
-    --         {
-    --             "<leader>.",
-    --             function()
-    --                 require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-    --                     winblend = 10,
-    --                     previewer = false,
-    --                 }))
-    --             end,
-    --             desc = "Fuzzily search in current buffer",
-    --         },
-    --     },
-    -- },
+    {
+        "nvim-telescope/telescope.nvim",
+        keys = {
+            -- {
+            --     "<leader>fp",
+            --     function()
+            --         require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+            --     end,
+            --     desc = "Find Plugin File",
+            -- },
+            -- find_file_config("<leader>ff"),
+            -- find_file_config("<leader><space>"),
+            {
+                "<leader>.",
+                function()
+                    require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+                        winblend = 10,
+                        previewer = false,
+                    }))
+                end,
+                desc = "Fuzzily search in current buffer",
+            },
+        },
+    },
 
     -- add telescope-fzf-native
     {
