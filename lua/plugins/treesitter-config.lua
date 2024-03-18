@@ -12,6 +12,8 @@ return {
                 "sql",
                 "rust",
                 "graphql",
+                "dockerfile",
+                "latex",
             })
         end,
     },
