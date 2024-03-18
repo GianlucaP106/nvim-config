@@ -1,3 +1,5 @@
+-- The purpose of this override is to add my own GP logo instead of the LazyVim one
+
 return {
     "nvimdev/dashboard-nvim",
     opts = function()

@@ -1,3 +1,5 @@
+-- The purpose is to add current buffer search shorcut
+
 return {
     -- add current buffer search
     {
@@ -11,20 +13,8 @@ return {
                         previewer = false,
                     }))
                 end,
-                desc = "Fuzzily search in current buffer",
+                desc = "Search in current buffer",
             },
-        },
-    },
-
-    -- add telescope-fzf-native
-    {
-        "telescope.nvim",
-        dependencies = {
-            "nvim-telescope/telescope-fzf-native.nvim",
-            build = "make",
-            config = function()
-                require("telescope").load_extension("fzf")
-            end,
         },
     },
 }

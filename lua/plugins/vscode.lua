@@ -1,3 +1,5 @@
+-- vscode theme
+
 return {
     {
         "Mofiqul/vscode.nvim",
@@ -33,8 +35,6 @@ return {
             require("vscode").load()
         end,
     },
-
-    -- Configure LazyVim to load gruvbox
     {
         "LazyVim/LazyVim",
         opts = {
