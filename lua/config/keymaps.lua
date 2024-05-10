@@ -19,3 +19,5 @@ end, { desc = "" })
 vim.keymap.set("n", "<Right>", function()
     print("use l")
 end, { desc = "" })
+
+vim.keymap.set("n", "<leader>tp", "<Plug>PlenaryTestFile")

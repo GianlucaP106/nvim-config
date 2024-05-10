@@ -1,5 +1,4 @@
 -- vscode theme
-
 return {
     {
         "Mofiqul/vscode.nvim",

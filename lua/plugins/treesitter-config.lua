@@ -1,4 +1,4 @@
--- The purpose is to ensure some parsers are installed on top of the deafault
+-- The purpose is to ensure some parsers are installed on top of the default
 
 return {
     -- If you'd rather extend the default config, use the code below instead:
