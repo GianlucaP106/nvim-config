@@ -2,6 +2,7 @@
 
 return {
     "nvimdev/dashboard-nvim",
+    enabled = false,
     opts = function()
         -- Default:
         -- local logo = [[
