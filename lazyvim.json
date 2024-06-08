@@ -3,10 +3,11 @@
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.lang.java",
+    "lazyvim.plugins.extras.lang.nushell",
     "lazyvim.plugins.extras.lang.tailwind"
   ],
   "news": {
-    "NEWS.md": "4964"
+    "NEWS.md": "5950"
   },
-  "version": 4
+  "version": 6
 }
