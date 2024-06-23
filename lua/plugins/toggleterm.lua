@@ -14,10 +14,10 @@ return {
         version = "*",
         config = true,
         keys = {
-            getToggleTermCommand("Th", "horizontal", 40),
-            getToggleTermCommand("Tv", "vertical", 80),
-            getToggleTermCommand("Tf", "float", 40),
-            getToggleTermCommand("Tt", "tab", 40),
+            getToggleTermCommand("hh", "horizontal", 25),
+            getToggleTermCommand("hv", "vertical", 80),
+            getToggleTermCommand("hf", "float", 40),
+            getToggleTermCommand("ht", "tab", 40),
             getToggleTermCommand("ft", "float", 40),
             getToggleTermCommand("fT", "float", 40),
         },
@@ -27,7 +27,7 @@ return {
         "folke/which-key.nvim",
         opts = {
             defaults = {
-                ["<leader>T"] = { name = "+Toggle termninal" },
+                ["<leader>h"] = { name = "+Toggle termninal" },
             },
         },
     },
