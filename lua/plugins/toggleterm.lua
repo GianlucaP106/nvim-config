@@ -1,25 +1,43 @@
 -- The purpose of this plugin is to add terminal windows in nvim
 
-local getToggleTermCommand = function(cmd, direction, size)
-    return {
-        "<leader>" .. cmd,
-        "<cmd>ToggleTerm size=" .. size .. " dir=. direction=" .. direction .. "<CR>",
-        desc = "Toggle terminal " .. direction,
-    }
-end
-
 return {
     {
         "akinsho/toggleterm.nvim",
         version = "*",
         config = true,
         keys = {
-            getToggleTermCommand("hh", "horizontal", 25),
-            getToggleTermCommand("hv", "vertical", 80),
-            getToggleTermCommand("hf", "float", 40),
-            getToggleTermCommand("ht", "tab", 40),
-            getToggleTermCommand("ft", "float", 40),
-            getToggleTermCommand("fT", "float", 40),
+            {
+                "<leader>hh",
+                function()
+                    local screenY = vim.api.nvim_get_option_value("lines", {})
+                    local size = screenY / 3
+                    vim.cmd("ToggleTerm size=" .. size .. " dir=. direction=horizontal")
+                end,
+                desc = "Toggle terminal horizontal",
+            },
+            {
+                "<leader>hv",
+                function()
+                    local screenX = vim.api.nvim_get_option_value("columns", {})
+                    local size = screenX / 3
+                    vim.cmd("ToggleTerm size=" .. size .. " dir=. direction=vertical")
+                end,
+                desc = "Toggle terminal vertical",
+            },
+            {
+                "<leader>hf",
+                function()
+                    vim.cmd("ToggleTerm dir=. direction=float")
+                end,
+                desc = "Toggle terminal float",
+            },
+            {
+                "<leader>ht",
+                function()
+                    vim.cmd("ToggleTerm dir=. direction=tab")
+                end,
+                desc = "Toggle terminal tab",
+            },
         },
     },
     -- Add the hint in which key
@@ -27,7 +45,7 @@ return {
         "folke/which-key.nvim",
         opts = {
             spec = {
-                { "<leader>h", group = "Toggle termninal" },
+                { "<leader>h", group = "Terminal" },
             },
         },
     },
