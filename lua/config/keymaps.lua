@@ -1,24 +1,17 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
--- quit window key map
-vim.keymap.set("n", "<leader>qw", ":q<CR>", { desc = "Quit window" })
-
 -- forces me to use hjkl
-vim.keymap.set("n", "<Down>", function()
-    print("use j")
-end, { desc = "" })
+local nav_keys = {
+    ["h"] = "<Down>",
+    ["j"] = "<Up>",
+    ["k"] = "<Left>",
+    ["l"] = "<Right>",
+}
+for k, arrow in pairs(nav_keys) do
+    vim.keymap.set("n", arrow, function()
+        print("use " .. k)
+    end, { desc = "" })
+end
 
-vim.keymap.set("n", "<Up>", function()
-    print("use k")
-end, { desc = "" })
-
-vim.keymap.set("n", "<Left>", function()
-    print("use h")
-end, { desc = "" })
-
-vim.keymap.set("n", "<Right>", function()
-    print("use l")
-end, { desc = "" })
-
+-- plenary test
 vim.keymap.set("n", "<leader>tp", "<Plug>PlenaryTestFile")
-vim.api.nvim_set_keymap("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
