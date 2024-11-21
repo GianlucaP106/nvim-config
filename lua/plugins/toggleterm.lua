@@ -1,9 +1,9 @@
 -- The purpose of this plugin is to add terminal windows in nvim
 
-local function toggleHorizontal()
-    local screenY = vim.api.nvim_get_option_value("lines", {})
-    local size = screenY / 3
-    vim.cmd("ToggleTerm size=" .. size .. " dir=. direction=horizontal")
+local function toggleVertical()
+    local screenX = vim.api.nvim_get_option_value("columns", {})
+    local size = screenX / 3
+    vim.cmd("ToggleTerm size=" .. size .. " dir=. direction=vertical")
 end
 
 return {
@@ -41,16 +41,16 @@ return {
             {
                 "<leader>hh",
                 function()
-                    toggleHorizontal()
+                    local screenY = vim.api.nvim_get_option_value("lines", {})
+                    local size = screenY / 3
+                    vim.cmd("ToggleTerm size=" .. size .. " dir=. direction=horizontal")
                 end,
                 desc = "Toggle terminal horizontal",
             },
             {
                 "<leader>hv",
                 function()
-                    local screenX = vim.api.nvim_get_option_value("columns", {})
-                    local size = screenX / 3
-                    vim.cmd("ToggleTerm size=" .. size .. " dir=. direction=vertical")
+                    toggleVertical()
                 end,
                 desc = "Toggle terminal vertical",
             },
@@ -71,7 +71,7 @@ return {
             {
                 "<C-_>",
                 function()
-                    toggleHorizontal()
+                    toggleVertical()
                 end,
                 desc = "Toggle terminal horizontal",
             },
