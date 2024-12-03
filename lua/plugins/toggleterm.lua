@@ -75,6 +75,13 @@ return {
                 end,
                 desc = "Toggle terminal horizontal",
             },
+            {
+                "<C-/>",
+                function()
+                    toggleVertical()
+                end,
+                desc = "Toggle terminal horizontal",
+            },
         },
     },
     -- Add the hint in which key
