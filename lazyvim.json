@@ -1,16 +1,18 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.mini-surround",
+    "lazyvim.plugins.extras.editor.fzf",
     "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.lang.java",
     "lazyvim.plugins.extras.lang.nushell",
     "lazyvim.plugins.extras.lang.ocaml",
     "lazyvim.plugins.extras.lang.prisma",
     "lazyvim.plugins.extras.lang.tailwind",
+    "lazyvim.plugins.extras.lang.toml",
     "lazyvim.plugins.extras.ui.smear-cursor"
   ],
   "news": {
-    "NEWS.md": "7429"
+    "NEWS.md": "10960"
   },
   "version": 7
 }
