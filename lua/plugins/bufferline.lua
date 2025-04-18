@@ -1,16 +1,37 @@
--- local bufferline = require("bufferline")
+local function apply_bg(highlights)
+    local resolved = {}
+
+    for group, opts in pairs(highlights) do
+        resolved[group] = vim.tbl_extend("force", opts, { bg = "#000000" })
+    end
+
+    return resolved
+end
+
 return {
     "akinsho/bufferline.nvim",
     opts = {
         options = {
-            show_close_icon = false,
+            show_buffer_icons = true,
             show_buffer_close_icons = false,
-            separator_style = { "", "" },
+            show_close_icon = false,
+            show_tab_indicators = false,
+            themable = false,
+            separator_style = {},
             indicator = {
                 style = "none",
             },
+            numbers = "none",
+            offsets = {
+                {
+                    filetype = "neo-tree",
+                    text = "Neo-tree",
+                    highlight = "NonText",
+                    text_align = "left",
+                },
+            },
         },
-        highlights = {
+        highlights = apply_bg({
             background = {
                 link = "NonText",
             },
@@ -30,12 +51,27 @@ return {
             buffer_visible = {
                 link = "BufferLineBuffer",
             },
+            buffer_selected = {},
+
+            modified = {
+                link = "NonText",
+            },
+            modified_visible = {
+                link = "NonText",
+            },
+            modified_selected = {
+                link = "NonText",
+            },
 
             tab = {
                 link = "NonText",
             },
             tab_close = {
                 link = "BufferLineTab",
+            },
+
+            tab_selected = {
+                link = "NonText",
             },
 
             numbers = {
@@ -100,6 +136,10 @@ return {
                 link = "BufferLineInfo",
             },
 
+            info_diagnostic_selected = {},
+
+            info_selected = {},
+
             warning = {
                 fg = "#a5a57f",
                 italic = true,
@@ -127,6 +167,28 @@ return {
             hint_diagnostic_visible = {
                 link = "BufferLineHint",
             },
-        },
+            hint_diagnostic_selected = {},
+            hint_selected = {},
+
+            indicator_selected = {},
+            error_diagnostic_selected = {},
+            pick_selected = {},
+            warning_diagnostic_selected = {},
+            error_selected = {},
+            close_button_selected = {},
+            numbers_selected = {},
+            diagnostic_selected = {},
+            warning_selected = {},
+            separator_selected = {},
+            separator_visible = {},
+            separator = {},
+            offset_separator = {},
+            indicator_visible = {},
+            pick_visible = {},
+
+            tab_separator = {},
+            tab_separator_selected = {},
+            pick = {},
+        }),
     },
 }

@@ -16,5 +16,8 @@ return {
                 },
             },
         },
+        indent = {
+            enabled = true,
+        },
     },
 }
