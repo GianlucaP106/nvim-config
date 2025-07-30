@@ -2,7 +2,7 @@ return {
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.editor.outline" },
-    { import = "lazyvim.plugins.extras.lang.clangd" },
+    -- { import = "lazyvim.plugins.extras.lang.clangd" },
 
     -- for some reason java needs to be installed the other way (using the LazyExtras interface).
     -- Discovered on march 24th 2024 - noticed lombok was not working
