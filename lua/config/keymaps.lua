@@ -7,3 +7,8 @@ vim.keymap.set("n", "<leader>tp", "<Plug>PlenaryTestFile")
 vim.keymap.set("n", "<leader>.", "<cmd>FzfLua blines<cr>", {
     desc = "Search in current buffer",
 })
+
+-- :checktime
+vim.keymap.set("n", "<leader>r", "<cmd>checktime<cr>", {
+    desc = "Checktime",
+})
