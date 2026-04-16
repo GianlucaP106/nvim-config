@@ -5,7 +5,6 @@ return {
         cli = {
             mux = {
                 backend = "tmux",
-
                 enabled = true,
             },
         },
